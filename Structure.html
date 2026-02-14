@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA with GJIMT | Global Accounting Qualification</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#5f2c82;
+  --accent:#f37021;
+  --dark:#1f1f1f;
+  --light:#ffffff;
+  --bg:#f4f6fb;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#333;
+}
+
+/* ================= HEADER ================= */
+header{
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  border-bottom:4px solid var(--primary);
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.brand img{
+  height:65px;
+}
+
+.brand-text h1{
+  font-size:22px;
+  color:var(--primary);
+  font-weight:700;
+}
+
+.brand-text p{
+  font-size:13px;
+  color:#666;
+}
+
+.header-info{
+  text-align:right;
+  font-size:14px;
+}
+
+.header-info b{
+  color:var(--primary);
+}
+
+/* ================= HERO ================= */
+.hero{
+  background:linear-gradient(135deg,#5f2c82,#49a09d);
+  color:#fff;
+  padding:60px 20px;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero h3{
+  font-size:20px;
+  font-weight:400;
+  margin-bottom:20px;
+}
+
+.hero ul{
+  list-style:none;
+}
+
+.hero ul li{
+  margin:10px 0;
+  padding-left:24px;
+  position:relative;
+}
+
+.hero ul li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#ffd166;
+}
+
+.hero-box{
+  background:#fff;
+  color:#333;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+  text-align:center;
+}
+
+.hero-box h4{
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.hero-box .price{
+  font-size:2.5rem;
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* ================= SECTIONS ================= */
+section{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  color:var(--primary);
+  margin-bottom:40px;
+}
+
+/* ================= CARDS ================= */
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:35px;
+  box-shadow:0 12px 30px rgba(0,0,0,.1);
+  margin-bottom:40px;
+}
+
+.card h3{
+  color:var(--primary);
+  margin-bottom:15px;
+}
+
+/* ================= LEVELS ================= */
+.levels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.level{
+  background:#f7f4fb;
+  border-left:6px solid var(--primary);
+  border-radius:14px;
+  padding:22px;
+}
+
+.level ul{
+  padding-left:18px;
+}
+
+.level ul li{
+  margin-bottom:8px;
+}
+
+/* ================= TABLE ================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+th,td{
+  padding:14px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+th{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* ================= HIGHLIGHTS ================= */
+.highlights{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.highlight{
+  background:#eef1ff;
+  padding:18px;
+  border-radius:12px;
+  font-weight:500;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  text-align:center;
+  padding:60px 20px;
+  border-radius:22px;
+}
+
+.cta h2{
+  font-size:2.6rem;
+  margin-bottom:12px;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 38px;
+  background:#fff;
+  color:var(--primary);
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+.cost-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:30px 26px;
+  max-width:380px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 18px 40px rgba(0,0,0,0.15);
+  border:4px solid transparent;
+  background-clip:padding-box;
+}
+
+/* Gradient border effect */
+.cost-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:4px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+/* Title */
+.cost-title{
+  font-size:18px;
+  color:#5f2c82;
+  font-weight:600;
+  margin-bottom:16px;
+}
+
+/* Amount */
+.cost-amount{
+  font-size:38px;
+  font-weight:700;
+  color:#ff7a18;
+  margin-bottom:18px;
+}
+
+.cost-amount span{
+  display:block;
+  font-size:16px;
+  letter-spacing:1px;
+  color:#444;
+  margin-top:4px;
+}
+
+/* Details list */
+.cost-details{
+  list-style:none;
+  padding:0;
+  margin:0;
+  text-align:left;
+}
+
+.cost-details li{
+  position:relative;
+  padding-left:28px;
+  margin-bottom:14px;
+  font-size:14.5px;
+  color:#333;
+  line-height:1.5;
+}
+
+.cost-details li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  top:2px;
+  color:#ff7a18;
+  font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#1f1f1f;
+  color:#ccc;
+  text-align:center;
+  padding:22px;
+  font-size:.9rem;
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .header-info{text-align:center;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img src="https://www.gjimt.ac.in/wp-content/uploads/2025/09/gjimt-logo.png" alt="GJIMT Logo">
+      
+    </div>
+    <div class="header-info">
+      <p><b>Admissions Open</b></p>
+      <p>📞 +91 99144 33199</p>
+      <p>🌐 www.gjimt.ac.in</p>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h2>ACCA with GJIMT</h2>
+      <h3>Global Accounting & Finance Qualification</h3>
+      <ul>
+        <li>13 Papers | International Recognition</li>
+        <li>2.5 – 4 Years Completion</li>
+        <li>Career in Audit, Finance, Taxation</li>
+        <li>Work Opportunities in 180+ Countries</li>
+      </ul>
+    </div>
+
+   <div class="cost-card">
+  <h4 class="cost-title">Estimated Total Cost</h4>
+
+  <div class="cost-amount">
+    $3,500 – $4,000
+    <span>USD</span>
+  </div>
+
+  <ul class="cost-details">
+    <li>Exemptions available for <b>BCom / BBA / CA-Foundation</b> holders</li>
+    <li><b>36 months</b> Practical Experience Requirement (PER)</li>
+    <li>Ethics Module mandatory for <b>ACCA Membership</b></li>
+  </ul>
+</div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="card">
+    <h3>About ACCA</h3>
+    <p>
+      ACCA (Association of Chartered Certified Accountants) is a globally
+      recognized professional accounting qualification that equips students
+      with strong financial, auditing, taxation, and strategic management skills.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Program Structure</h3>
+    <div class="levels">
+      <div class="level">
+        <h4>Level 1 – Applied Knowledge</h4>
+        <ul>
+          <li>Business & Technology</li>
+          <li>Management Accounting</li>
+          <li>Financial Accounting</li>
+        </ul>
+      </div>
+
+      <div class="level">
+        <h4>Level 2 – Applied Skills</h4>
+        <ul>
+          <li>Corporate & Business Law</li>
+          <li>Performance Management</li>
+          <li>Taxation</li>
+          <li>Financial Reporting</li>
+          <li>Audit & Assurance</li>
+          <li>Financial Management</li>
+        </ul>
+      </div>
+
+      <div class="level">
+        <h4>Level 3 – Strategic Professional</h4>
+        <ul>
+          <li>Strategic Business Leader</li>
+          <li>Strategic Business Reporting</li>
+          <li>Two Optional Papers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Career Opportunities</h3>
+    <div class="highlights">
+      <div class="highlight">✔ Financial Analyst</div>
+      <div class="highlight">✔ Auditor & Tax Consultant</div>
+      <div class="highlight">✔ Finance Manager</div>
+      <div class="highlight">✔ CFO Track Roles</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Build a Global Career with ACCA</h2>
+    <p>Limited Seats Available</p>
+    <a href="#">Apply Now</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Gian Jyoti Institute of Management & Technology<br>
+  Sector-54, Chandigarh | Phase-2, Mohali
+</footer>
+
+</body>
+</html>

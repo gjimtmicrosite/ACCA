@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GJIMT – ACCA Professional Training Program</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#7b2cbf;
+  --dark:#240046;
+  --accent:#ffb703;
+  --bg:#f4f6fb;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:var(--bg);
+  color:#333;
+  line-height:1.7;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:18px 25px;
+  border-bottom:4px solid var(--primary);
+}
+.header-wrap{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.header-wrap img{
+  height:60px;
+}
+.header-text h3{
+  color:var(--primary);
+  font-weight:700;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--dark));
+  color:#fff;
+  padding:90px 20px;
+  text-align:center;
+}
+.hero h1{
+  font-size:42px;
+  margin-bottom:12px;
+}
+.hero p{
+  font-size:18px;
+  opacity:0.95;
+}
+
+/* SECTION */
+.section{
+  max-width:1200px;
+  margin:70px auto;
+  padding:0 20px;
+}
+.section h2{
+  font-size:30px;
+  color:var(--primary);
+  margin-bottom:25px;
+  border-left:6px solid var(--primary);
+  padding-left:15px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.box{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+.box h3{
+  color:var(--dark);
+  margin-bottom:15px;
+}
+ul{
+  list-style:none;
+}
+ul li{
+  padding-left:28px;
+  position:relative;
+  margin-bottom:10px;
+}
+ul li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:var(--primary);
+  font-weight:bold;
+}
+
+/* FEES */
+.fees{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.fee-box{
+  background:linear-gradient(135deg,#ff8500,#ffb703);
+  color:#fff;
+  padding:35px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.2);
+}
+.fee-box h3{
+  font-size:22px;
+}
+.fee-box p{
+  font-size:20px;
+  font-weight:700;
+}
+/* ANIMATION BASE */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* HOVER EFFECTS */
+.card, .box{
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.card:hover, .box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 55px rgba(0,0,0,.12);
+}
+
+.fee-box{
+  transition:transform .4s ease;
+}
+.fee-box:hover{
+  transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  color:#fff;
+  padding:45px 20px;
+}
+.footer-wrap{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+footer a{
+  color:#ffd166;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-wrap">
+    <img src="https://www.gjimt.ac.in/wp-content/uploads/2025/09/gjimt-logo.png" alt="GJIMT Logo">
+    <div class="header-text">
+      <h3>ACCA Professional Training Program</h3>
+      <p>16 Months | Hybrid Delivery</p>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>GJIMT – ACCA Professional Training Program</h1>
+  <p>For B.Com Graduates (5 ACCA Exemptions)</p>
+  <p><strong>Duration:</strong> 16 Months | 8 Papers | Hybrid Mode</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>About the Program</h2>
+  <div class="card">
+    <p>
+      GJIMT offers a structured <strong>16-month ACCA preparation pathway</strong> enabling B.Com graduates
+      to complete the remaining 8 ACCA papers with expert faculty, exam-focused coaching, and strong
+      placement support. The program is aligned with ACCA quarterly exam sittings to ensure maximum
+      pass rates.
+    </p>
+  </div>
+</section>
+
+<!-- PAPERS -->
+<section class="section">
+  <h2>Papers Covered (After 5 Exemptions)</h2>
+  <div class="grid">
+    <div class="box">
+      <h3>Applied Skills</h3>
+      <ul>
+        <li>Performance Management (PM)</li>
+        <li>Financial Reporting (FR)</li>
+        <li>Audit & Assurance (AA)</li>
+        <li>Financial Management (FM)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Strategic Professional</h3>
+      <ul>
+        <li>Strategic Business Leader (SBL)</li>
+        <li>Strategic Business Reporting (SBR)</li>
+        <li>Advanced Financial Management (AFM)</li>
+        <li>Advanced Audit & Assurance (AAA)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+  <h2>16-Month Training Plan</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Phase 1 (Months 1–4):</strong> PM + FM → June Attempt</li>
+      <li><strong>Phase 2 (Months 5–8):</strong> AA + FR → September Attempt</li>
+      <li><strong>Phase 3 (Months 9–12):</strong> SBL + SBR → December Attempt</li>
+      <li><strong>Phase 4 (Months 13–16):</strong> AFM + AAA → March Attempt</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section">
+  <h2>Weekly Teaching Schedule</h2>
+  <div class="card">
+    <ul>
+      <li>Monday–Friday: 3 hours/day – Concept teaching & problem solving</li>
+      <li>Saturday: 4 hours – Case studies & past papers</li>
+      <li>Sunday: Self-study & recorded lectures</li>
+      <li>Total: 18–20 contact hours per week</li>
+    </ul>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section">
+  <h2>Teaching Methodology</h2>
+  <div class="card">
+    <ul>
+      <li>Exam-oriented approach</li>
+      <li>Weekly quizzes & assignments</li>
+      <li>Monthly sectional tests</li>
+      <li>3–4 full-length mock exams before each sitting</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section">
+  <h2>Indicative Fee Structure</h2>
+  <div class="fees">
+    <div class="fee-box">
+      <h3>Applied Skills</h3>
+      <p>USD 150</p>
+      <p>₹15,000 / Paper</p>
+    </div>
+    <div class="fee-box">
+      <h3>Strategic Professional</h3>
+      <p>USD 200</p>
+      <p>₹20,000 / Paper</p>
+    </div>
+    <div class="fee-box">
+      <h3>Complete 8 Papers</h3>
+      <p>USD 1,400</p>
+      <p>₹1,40,000</p>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <ul>
+      <li>Study material & mock tests included</li>
+      <li>ACCA exam fees payable directly to ACCA (not part of training fee)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="section">
+  <h2>Career Outcomes</h2>
+  <div class="card">
+    <ul>
+      <li>ACCA Finalist / Affiliate status</li>
+      <li>Careers in Audit, Taxation, Corporate Finance, Banking & Consulting</li>
+      <li>Opportunities with Big 4, MNCs & global firms</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div>
+      <p><strong>GJIMT ACCA Training Cell</strong></p>
+      <p>Admissions Office</p>
+      <p>Email: <a href="mailto:gjimt@gjimt.ac.in">gjimt@gjimt.ac.in</a></p>
+      <p>Phone: +91-9914433199</p>
+    </div>
+    <div>
+      <p>GJIMT Campus</p>
+      <p>Chandigarh / Mohali</p>
+    </div>
+  </div>
+</footer>
+<script>
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener("click",function(e){
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({behavior:"smooth"});
+  });
+});
+
+// SCROLL REVEAL
+const reveals=document.querySelectorAll(".reveal");
+const revealOnScroll=()=>{
+  reveals.forEach(el=>{
+    const windowHeight=window.innerHeight;
+    const elementTop=el.getBoundingClientRect().top;
+    if(elementTop < windowHeight-120){
+      el.classList.add("active");
+    }
+  });
+};
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GJIMT | ACCA Professional Training Program</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#c7d2fe);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:1rem 0;
+    background:rgba(30,60,114,0.95);
+    backdrop-filter:blur(15px);
+    z-index:1000;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+}
+nav li{margin:0 1.2rem;}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    padding:.5rem 1.2rem;
+    border-radius:25px;
+    transition:.3s;
+}
+nav a:hover{
+    background:rgba(255,255,255,.25);
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#ff6b6b);
+}
+.hero h1{
+    font-size:4rem;
+    margin-bottom:1rem;
+}
+.hero p{
+    font-size:1.7rem;
+    margin-bottom:2.5rem;
+}
+.cta-btn{
+    padding:18px 55px;
+    border:none;
+    border-radius:50px;
+    font-size:1.2rem;
+    font-weight:bold;
+    background:linear-gradient(45deg,#feca57,#ff9ff3);
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    transition:.4s;
+}
+.cta-btn:hover{
+    transform:translateY(-8px) scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:120px 6%;
+    max-width:1400px;
+    margin:auto;
+}
+h2{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:4rem;
+    background:linear-gradient(45deg,#2a5298,#ff6b6b);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ================= MODULES ================= */
+.modules-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:2.5rem;
+}
+
+.module-box{
+    width:320px;
+    min-height:240px;
+    padding:2.8rem 2rem;
+    border-radius:30px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(12px);
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+    text-align:center;
+    cursor:pointer;
+    transition:.45s;
+    position:relative;
+}
+.module-box:hover{
+    transform:translateY(-18px) scale(1.06);
+}
+.module-icon{
+    font-size:3.2rem;
+    margin-bottom:1rem;
+}
+.module-box h3{
+    font-size:1.9rem;
+    color:#2a5298;
+    margin-bottom:.8rem;
+}
+.module-box p{
+    color:#555;
+    font-size:1.05rem;
+}
+
+/* ================= RESOURCE PACK ================= */
+.resource-pack{
+    border:2px solid rgba(102,126,234,.3);
+}
+
+.resource-sub{
+    margin-top:2.5rem;
+    display:flex;
+    gap:1.8rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    overflow:hidden;
+    transition:.6s ease;
+}
+.resource-sub.hidden{
+    max-height:0;
+    opacity:0;
+    transform:translateY(30px);
+}
+.resource-sub.show{
+    max-height:600px;
+    opacity:1;
+    transform:translateY(0);
+}
+
+.resource-card{
+    width:240px;
+    padding:2rem 1.6rem;
+    border-radius:22px;
+    color:#fff;
+    text-align:center;
+    transition:.4s;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+.resource-card:hover{
+    transform:translateY(-12px) scale(1.08);
+}
+.resource-card h4{
+    font-size:2.2rem;
+}
+.resource-card span{
+    font-weight:700;
+    display:block;
+    margin-bottom:.6rem;
+}
+.resource-card.fm{
+    background:linear-gradient(135deg,#16a085,#2ecc71);
+}
+.resource-card.pm{
+    background:linear-gradient(135deg,#5f2c82,#49a09d);
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:#fff;
+    text-align:center;
+    padding:3rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .hero h1{font-size:2.6rem;}
+    .hero p{font-size:1.3rem;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#modules">Modules</a></li>
+</ul>
+</nav>
+</div>
+
+<section class="hero" id="home">
+<h1>ACCA with GJIMT</h1>
+<p>Professional Training Program for Global Careers</p>
+<button class="cta-btn" onclick="scrollToSection('modules')">Explore Modules</button>
+</section>
+
+<section id="modules">
+<h2>Main Modules</h2>
+
+<div class="modules-grid">
+
+<div class="module-box" onclick="openPage('training.html')">
+<div class="module-icon">🎓</div>
+<h3>ACCA Professional Training</h3>
+<p>Integrated ACCA education with industry exposure</p>
+</div>
+
+<div class="module-box" onclick="openPage('Structure.html')">
+<div class="module-icon">📊</div>
+<h3>ACCA Structure</h3>
+<p>Complete qualification pathway overview</p>
+</div>
+
+<div class="module-box resource-pack" onclick="toggleResources(event)">
+<div class="module-icon">📚</div>
+<h3>ACCA Resource Pack</h3>
+<p>Premium learning resources for ACCA papers</p>
+
+<div class="resource-sub hidden">
+<div class="resource-card fm" onclick="openPage('FM.html')">
+<h4>📈 FM</h4>
+<span>Financial Management</span>
+<p>Investment, valuation & risk analysis</p>
+</div>
+
+<div class="resource-card pm" onclick="openPage('pm.html')">
+<h4>📊 PM</h4>
+<span>Performance Management</span>
+<p>Costing, budgeting & KPIs</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 GJIMT ACCA Professional Training Program</p>
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function toggleResources(e){
+    if(e.target.closest('.resource-card')) return;
+    const sub=e.currentTarget.querySelector('.resource-sub');
+    sub.classList.toggle('hidden');
+    sub.classList.toggle('show');
+}
+function openPage(page){
+    window.open(page,'_blank');
+}
+</script>
+
+</body>
+</html>
