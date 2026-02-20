@@ -123,7 +123,51 @@
         display: none;
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
+.nav-link {
+  text-decoration: none;      /* removes underline */
+  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
 
+.nav-link:hover {
+  background-color: #f0f4f8;
+  color: #007bff;
+}
+  .nav-btn {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+  nav {
+  background: #ffffff;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.nav-item:hover {
+  color: #007bff;
     #topBtn:hover {
         background: #1e3c72;
     }
@@ -154,6 +198,9 @@
 <header>
     <h1>GJIMT – ACCA Financial Management (FM)</h1>
     <p>Complete Resource Kit for BCom Graduates</p>
+    <nav>
+  <a href="index.html" class="nav-item">Home</a>
+</nav>
 </header>
 
 <div class="container">
@@ -259,3 +306,4 @@
 
 </body>
 </html>
+
