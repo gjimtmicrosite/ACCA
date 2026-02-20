@@ -330,55 +330,32 @@ footer{
   padding:22px;
   font-size:.9rem;
 }
-.nav-link {
-  text-decoration: none;      /* removes underline */
-  color: #2c3e50;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+.right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;     /* align to right */
+  gap: 12px;
 }
 
-.nav-link:hover {
-  background-color: #f0f4f8;
-  color: #007bff;
+.admission-info {
+  text-align: right;
+  color: #4b0082;
+  font-weight: 600;
 }
-  .nav-btn {
+
+.nav-btn {
   text-decoration: none;
   background-color: #007bff;
   color: #ffffff;
-  padding: 10px 18px;
+  padding: 10px 22px;
   border-radius: 8px;
-  font-size: 15px;
   font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .nav-btn:hover {
   background-color: #0056b3;
-  transform: translateY(-2px);
 }
-  nav {
-  background: #ffffff;
-  padding: 12px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.nav-item {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  margin-right: 20px;
-}
-.center-btn {
-  display: block;
-  margin: 40px auto;
-  width: fit-content;
-}
-.nav-item:hover {
-  color: #007bff;
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;}
   .header-info{text-align:center;}
@@ -394,14 +371,18 @@ footer{
     <div class="brand">
       <img src="https://www.gjimt.ac.in/wp-content/uploads/2025/09/gjimt-logo.png" alt="GJIMT Logo">
        <nav>
-  <a href="index.html" class="nav-btn center-btn">Home</a>
+
 </nav>
     </div>
-    <div class="header-info">
-      <p><b>Admissions Open</b></p>
-      <p>📞 +91 99144 33199</p>
-      <p>🌐 www.gjimt.ac.in</p>
-    </div>
+   <div class="right-box">
+  <div class="admission-info">
+    <h4>Admissions Open</h4>
+    <p>📞 +91 99144 33199</p>
+    <p>🌐 www.gjimt.ac.in</p>
+  </div>
+
+  <a href="index.html" class="nav-btn">Home</a>
+</div>
   </div>
 </header>
 
@@ -523,6 +504,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
