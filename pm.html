@@ -175,7 +175,32 @@ footer{
 .nav-item:hover {
   color: #007bff;
 #topBtn:hover{background:#0f4c75;}
+.right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;     /* align to right */
+  gap: 12px;
+}
 
+.admission-info {
+  text-align: right;
+  color: #4b0082;
+  font-weight: 600;
+}
+
+.nav-btn {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #0056b3;
+}
 @keyframes fadeDown{
     from{opacity:0;transform:translateY(-20px)}
     to{opacity:1;transform:translateY(0)}
@@ -196,9 +221,9 @@ footer{
 <header>
     <h1>GJIMT – ACCA Performance Management (PM)</h1>
     <p>Complete Resource Pack | Teaching • Practice • Assessment</p>
-    <nav>
-  <a href="index.html" class="nav-item">Home</a>
-</nav>
+    <div class="right-box">
+  <a href="index.html" class="nav-btn">Home</a>
+</div>
 </header>
 
 <div class="container">
@@ -349,4 +374,5 @@ function scrollTopPage(){
 
 </body>
 </html>
+
 
