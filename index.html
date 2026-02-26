@@ -254,7 +254,15 @@ footer{
 </div>
 </div>
 </div>
+<!-- Chatbot testing -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
+	createChat({
+		webhookUrl: "https://aiprojectsgjimt.app.n8n.cloud/webhook/49ee6705-cfac-4c29-bd15-c6fc3013c0c3/chat"
+	});
+</script>
 </div>
 </section>
 
@@ -279,5 +287,6 @@ function openPage(page){
 
 </body>
 </html>
+
 
 
