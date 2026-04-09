@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA Levels</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#eef2f3,#dfe9f3); /* LIGHT BACKGROUND */
+  color:#2c3e50;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  position:absolute;
+  top:20px;
+  left:20px;
+  padding:10px 18px;
+  background:linear-gradient(135deg,#0072ff,#00c6ff);
+  border:none;
+  border-radius:25px;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.05);
+}
+
+.section{
+  margin-bottom:20px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.header{
+  padding:15px 20px;
+  background:linear-gradient(135deg,#0072ff,#00c6ff);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  color:#fff;
+}
+
+.header h2{
+  margin:0;
+  font-size:18px;
+}
+
+.arrow{
+  transition:0.3s;
+}
+
+.content{
+  max-height:0;
+  overflow:hidden;
+  transition:0.5s ease;
+  background:#ffffff;
+}
+
+.content.open{
+  max-height:500px;
+  padding:20px;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.table th, .table td{
+  border:1px solid #ddd;
+  padding:10px;
+  text-align:center;
+}
+
+.table th{
+  background:#0072ff;
+  color:#fff;
+}
+
+.table tr:nth-child(even){
+  background:#f5f7fa;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<div class="container">
+<h1>ACCA Integrated Structure</h1>
+
+<!-- KNOWLEDGE -->
+<div class="section">
+  <div class="header" onclick="toggle(this)">
+    <h2>ACCA Knowledge Level</h2>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="content">
+    <table class="table">
+      <tr><th>Semester</th><th>BBA</th><th>ACCA</th></tr>
+      <tr>
+        <td rowspan="2">Sem 1</td>
+        <td>Basic Accounting</td>
+        <td>Financial Accounting</td>
+      </tr>
+      <tr rowspan="2">
+        <td>Principles of Management</td>
+        <td rowspan="2">Business & Technology</td>
+      </tr>
+      <tr>
+        <td>Sem 2</td>
+        <td>Business Environment</td>
+        
+      </tr>
+      <tr>
+        <td>Sem 3</td>
+        <td>Cost Management</td>
+        <td>Management Accounting</td>
+      </tr>
+	   <tr>
+        <td colspan="3">Appear for Knowledge Level of ACCA @8,840 per paper</td>
+        
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- SKILL -->
+<div class="section">
+  <div class="header" onclick="toggle(this)">
+    <h2>ACCA Skill Level</h2>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="content">
+    <table class="table">
+      <tr><th>Semester</th><th>BBA</th><th>ACCA</th></tr>
+      <tr><td>Sem 2</td><td>Cost & Mgmt Accounting</td><td>Performance Management</td></tr>
+      <tr><td>Sem 4</td><td>Financial Management</td><td>Financial Management</td></tr>
+      <tr><td>Sem 5</td><td>Mercantile Law</td><td rowspan="2">Corporate & Business Law</td></tr>
+      <tr><td>Sem 6</td><td>Company Law</td></tr>
+      <tr><td rowspan="2">Sem 6</td><td>Direct Tax</td><td rowspan="2">Taxation</td></tr>
+      <tr><td>Direct & Indirect Tax</td></tr>
+      <tr><td>-</td><td>-</td><td>Financial Reporting</td></tr>
+      <tr><td>-</td><td>-</td><td>Audit & Assurance</td></tr>
+      <tr><td colspan="3">Appear for Skill Level of ACCA @14,200 Per paper </td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- PROFESSIONAL -->
+<div class="section">
+  <div class="header" onclick="toggle(this)">
+    <h2>ACCA Professional Level</h2>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="content">
+    <table class="table">
+      <tr><th>Semester</th><th>BBA</th><th>ACCA</th></tr>
+      <tr><td>Sem 2</td><td>Cost Management</td><td>Advanced Performance Mgmt</td></tr>
+      <tr><td>Sem 6</td><td>Strategic Management</td><td>Strategic Business Leader</td></tr>
+      <tr><td>Sem 6</td><td>Personal Financial Planning</td><td>Advanced Financial Mgmt</td></tr>
+      <tr><td>Sem 6</td><td>Direct Tax</td><td rowspan="2">Advanced Taxation</td></tr>
+      <tr><td>Sem 6</td><td>Direct& Indirect Tax</td></tr>
+      <tr><td>-</td><td>-</td><td>Strategic Business Reporting</td></tr>
+      <tr><td>-</td><td>-</td><td>Advanced Audit and Assurance/td></tr>
+    </table>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+  const content = el.nextElementSibling;
+  const arrow = el.querySelector('.arrow');
+
+  content.classList.toggle('open');
+  arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+
+function goBack(){
+  window.location.href = "https://gjimtmicrosite.github.io/ACCA/ACCA_plus2.html";
+}
+</script>
+
+</body>
+</html>
