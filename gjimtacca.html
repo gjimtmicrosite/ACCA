@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA Fee Structure</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#f5f7fa,#e4ecf7);
+    color: #2c3e50;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg,#0072ff,#00c6ff);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 12px 25px;
+    cursor: pointer;
+    background: #ddd;
+    margin: 5px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: #0072ff;
+    color: white;
+}
+
+/* Content */
+.content {
+    display: none;
+    animation: fade 0.6s ease;
+}
+
+.content.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* Card */
+.card {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Accordion */
+.header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h1>ACCA Fee Structure</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+    <div class="tab active" onclick="showTab('indian', event)">Indian Students</div>
+    <div class="tab" onclick="showTab('international', event)">🌍 International Students</div>
+</div>
+
+<!-- INDIAN -->
+<div id="indian" class="content active">
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+           Knowledge Level
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>₹10,000</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+            Skills Level (6 Papers)
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>₹20,000 per paper</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+            Professional Level
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>₹25,000</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- INTERNATIONAL -->
+<div id="international" class="content">
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+            Applied Knowledge (3 Papers)
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>$100 per paper</li>
+                <li>Total: $300</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+            Applied Skills (6 Papers)
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>$150 per paper</li>
+                <li>Total: $900</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header" onclick="toggle(this)">
+            Strategic Professional (4 Papers)
+            <span>▼</span>
+        </div>
+        <div class="details">
+            <ul>
+                <li>$200 per paper</li>
+                <li>Total: $800</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showTab(id, e) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+    e.target.classList.add('active');
+}
+
+function toggle(header) {
+    const details = header.nextElementSibling;
+    const arrow = header.querySelector("span");
+
+    if (details.style.maxHeight) {
+        details.style.maxHeight = null;
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        details.style.maxHeight = details.scrollHeight + "px";
+        arrow.style.transform = "rotate(180deg)";
+    }
+}
+
+function goBack(){
+    window.location.href = "https://gjimtmicrosite.github.io/ACCA/ACCA_plus2.html";
+}
+</script>
+
+</body>
+</html>
