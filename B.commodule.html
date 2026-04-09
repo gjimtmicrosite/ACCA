@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA Pathway</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#1d4350,#a43931);
+    color: white;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    transform: scale(1.08);
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Section */
+.section {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Header */
+.header {
+    background: #2ecc71;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
+    transition: transform 0.3s;
+}
+
+/* Content */
+.content {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+    transition: max-height 0.5s ease;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+th {
+    background: rgba(0,0,0,0.3);
+}
+
+/* Colors */
+.sem1 {background:#f39c12;}
+.sem2 {background:#e67e22;}
+.sem3 {background:#3498db;}
+.sem4 {background:#e74c3c;}
+.sem5 {background:#2ecc71;}
+
+/* Footer Note */
+.note {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+}
+
+/* 3D hover */
+.section:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h1>ACCA Pathway with B.Com (Hons)</h1>
+
+<!-- KNOWLEDGE -->
+<div class="section">
+    <div class="header" onclick="toggleSection(this)">
+        ACCA Knowledge Level
+        <span>▼</span>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <th>Semester</th>
+                <th>B.Com (Hons)</th>
+                <th>ACCA</th>
+            </tr>
+            <tr>
+                <td class="sem1">Sem 1</td>
+                <td>Financial Accounting</td>
+                <td>Financial Accounting</td>
+            </tr>
+            <tr>
+                <td class="sem1">Sem 1</td>
+                <td>Business Organization & Management</td>
+                <td>Business Technology</td>
+            </tr>
+            <tr>
+                <td class="sem2">Sem 2</td>
+                <td>Business Environment</td>
+                <td>Business Technology</td>
+            </tr>
+            <tr>
+                <td class="sem3">Sem 3</td>
+                <td>Management Accounting</td>
+                <td>Management Accounting</td>
+            </tr>
+        </table>
+        <div class="note">
+            Appear for Knowledge Level of ACCA @8,840 per paper
+        </div>
+    </div>
+</div>
+
+<!-- SKILL -->
+<div class="section">
+    <div class="header" onclick="toggleSection(this)">
+        ACCA Skill Level
+        <span>▼</span>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <th>Semester</th>
+                <th>B.Com (Hons)</th>
+                <th>ACCA</th>
+            </tr>
+            <tr>
+                <td class="sem2">Sem 2</td>
+                <td>Cost Accounting</td>
+                <td>Performance Management</td>
+            </tr>
+            <tr>
+                <td class="sem3">Sem 3</td>
+                <td>Mercantile Law</td>
+                <td>Corporate and Business Law</td>
+            </tr>
+            <tr>
+                <td class="sem4">Sem 4</td>
+                <td>Corporate Accounting</td>
+                 <td>Corporate and Business Law</td>
+            </tr>
+            <tr>
+                <td class="sem4">Sem 4</td>
+                <td>Income Tax Law & Practice</td>
+                <td>Taxation</td>
+            </tr>
+            <tr>
+                <td class="sem5">Sem 5</td>
+                <td>Goods & Services Tax</td>
+                 <td>Taxation</td>
+            </tr>
+            <tr>
+                <td class="sem5">Sem 5</td>
+                <td>Financial Management</td>
+                <td>Financial Management</td>
+            </tr>
+        </table>
+        <div class="note">
+            Appear for Skill Level of ACCA @14,200 per paper
+        </div>
+    </div>
+</div>
+
+<!-- PROFESSIONAL -->
+<div class="section">
+    <div class="header" onclick="toggleSection(this)">
+        ACCA Professional Level
+        <span>▼</span>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <th>Semester</th>
+                <th>B.Com (Hons)</th>
+                <th>ACCA</th>
+            </tr>
+            <tr>
+                <td class="sem2">Sem 2</td>
+                <td>Cost Accounting</td>
+                <td>Advanced Performance Management</td>
+            </tr>
+            <tr>
+                <td class="sem4">Sem 4</td>
+                <td>Income Tax Law & Practice</td>
+                <td>Advanced Taxation</td>
+            </tr>
+            <tr>
+                <td class="sem5">Sem 5</td>
+                <td>Goods & Services Tax</td>
+             <td>Advanced Taxation</td>
+            </tr>
+            <tr>
+                <td class="sem5">Sem 5</td>
+                <td>Advanced Financial Management</td>
+                <td>Advanced Financial Management</td>
+            </tr>
+        </table>
+        <div class="note">
+          Appear for Professional Level @32,037* for SBL paper, 22,795 per paper for SBR and two optional papers. Fees may change as per official website of ACCA.
+
+        </div>
+    </div>
+</div>
+
+<script>
+// BACK FUNCTION
+function goBack(){
+    window.location.href = "https://gjimtmicrosite.github.io/ACCA/ACCA_plus2.html";
+}
+
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector("span");
+
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        arrow.style.transform = "rotate(180deg)";
+    }
+}
+</script>
+
+</body>
+</html>
