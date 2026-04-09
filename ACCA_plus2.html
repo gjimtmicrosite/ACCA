@@ -3,292 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GJIMT ACCA Program</title>
+<title>ACCA Programs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  font-family:'Poppins',sans-serif;
+  background:#0f2027;
   color:#fff;
+  overflow-x:hidden;
 }
 
-/* 🔥 HOME BUTTON */
-.home-btn{
+/* 3D ANIMATED BACKGROUND */
+body::before{
+  content:"";
   position:fixed;
+  width:200%;
+  height:200%;
+  top:-50%;
+  left:-50%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,81,47,0.3), transparent 40%),
+             radial-gradient(circle at 70% 70%, rgba(29,151,108,0.3), transparent 40%),
+             radial-gradient(circle at 50% 50%, rgba(221,36,118,0.2), transparent 50%);
+  animation:moveBg 15s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moveBg{
+  0%{transform:rotate(0deg) scale(1);} 
+  50%{transform:rotate(180deg) scale(1.2);} 
+  100%{transform:rotate(360deg) scale(1);} 
+}
+
+.container{
+  padding:40px;
+  text-align:center;
+}
+
+.home-btn{
+  position:absolute;
   top:20px;
   left:20px;
-  padding:12px 26px;
-  background:linear-gradient(45deg,#ff6b6b,#feca57);
-  border-radius:30px;
-  text-decoration:none;
+  padding:10px 18px;
+  background:linear-gradient(135deg,#ff512f,#dd2476);
+  border:none;
+  border-radius:10px;
   color:#fff;
-  font-weight:700;
-  font-size:1rem;
-  box-shadow:0 0 20px rgba(255,255,255,0.6),
-             0 10px 25px rgba(0,0,0,0.3);
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
   transition:0.3s;
-  z-index:1000;
 }
 
 .home-btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 30px rgba(255,255,255,0.9),
-             0 15px 35px rgba(0,0,0,0.4);
-}
-
-/* CONTAINER */
-.container{
-  width:90%;
-  margin:auto;
-  padding:60px 0 40px; /* top padding increased */
+  transform:scale(1.05);
 }
 
 h1{
-  text-align:center;
-  margin-bottom:10px;
+  margin-bottom:60px;
 }
 
-.subtitle{
-  text-align:center;
-  margin-bottom:40px;
-  opacity:0.9;
-}
-
-/* Cards */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:80px;
+  flex-wrap:wrap;
 }
 
 .card{
-  background:#fff;
-  color:#333;
-  border-radius:15px;
-  padding:20px;
-  transition:transform 0.3s;
-  transform-style:preserve-3d;
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  width:300px;
+  height:380px;
+  perspective:1000px;
 }
 
-.card:hover{
-  transform:rotateY(10deg) rotateX(10deg) scale(1.05);
-}
-
-.card h2{
-  color:#1e3c72;
-}
-
-.section{
-  margin-top:40px;
-}
-
-ul{
-  padding-left:20px;
-}
-
-.timeline{
-  background:#fff;
-  color:#333;
-  padding:20px;
-  border-radius:15px;
-  margin-top:20px;
-}
-
-.table{
+.card-inner{
+  position:relative;
   width:100%;
-  border-collapse:collapse;
+  height:100%;
+  transition:transform 0.8s;
+  transform-style:preserve-3d;
+}
+
+.card:hover .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-front, .card-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.4);
+  padding:20px;
+}
+
+.card-front{
+  background:linear-gradient(135deg,#ff512f,#dd2476);
+}
+
+.card-back{
+  background:linear-gradient(135deg,#1d976c,#93f9b9);
+  transform:rotateY(180deg);
+}
+
+.sub-links{
   margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
 
-.table th,.table td{
-  border:1px solid #ddd;
+.sub-links a{
+  text-decoration:none;
   padding:10px;
-}
-
-.table th{
-  background:#1e3c72;
+  border-radius:10px;
+  background:rgba(255,255,255,0.2);
   color:#fff;
+  transition:0.3s;
 }
 
-.footer{
-  text-align:center;
-  margin-top:40px;
-  opacity:0.8;
+.sub-links a:hover{
+  background:#fff;
+  color:#000;
 }
+
+.detail{
+  display:none;
+  padding:40px;
+  text-align:center;
+}
+
+.back-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#ff512f;
+  color:#fff;
+  cursor:pointer;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 HOME BUTTON -->
-<a href="https://gjimtmicrosite.github.io/Integrated/" class="home-btn">🏠 Home</a>
+<button class="home-btn" onclick="goHome()">Home</button>
 
-<div class="container">
+<div class="container" id="mainPage">
+  <h1>ACCA Integrated Programs</h1>
 
-<h1>GJIMT ACCA Training Program</h1>
-<p class="subtitle">Duration: 24–28 Months | For Class 12 (Senior Secondary) Students</p>
+  <div class="cards">
 
-<div class="grid">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>BBA + ACCA</h2>
+          <p>Professional business degree with global accounting certification.</p>
+        </div>
+        <div class="card-back">
+          <h3>Explore</h3>
+          <div class="sub-links">
+            <a href="#" onclick="openDetail('bba-framework')">ACCA Framework</a>
+            <a href="#" onclick="openDetail('bba-modules')">Modules</a>
+            <a href="#" onclick="openDetail('bba-fees')">Fee Structure</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<h2>Level 1: Knowledge</h2>
-<ul>
-<li>Business & Technology (BT)</li>
-<li>Financial Accounting (FA)</li>
-<li>Management Accounting (MA)</li>
-</ul>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>B.Com + ACCA</h2>
+          <p>Commerce degree with international accounting excellence.</p>
+        </div>
+        <div class="card-back">
+          <h3>Explore</h3>
+          <div class="sub-links">
+            <a href="#" onclick="openDetail('bcom-framework')">ACCA Framework</a>
+            <a href="#" onclick="openDetail('bcom-modules')">Modules</a>
+            <a href="#" onclick="openDetail('bcom-fees')">Fee Structure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-<h2>Level 2: Applied Skills</h2>
-<ul>
-<li>Corporate & Business Law (LW)</li>
-<li>Taxation (TX)</li>
-<li>Financial Reporting (FR)</li>
-<li>Performance Management (PM)</li>
-<li>Financial Management (FM)</li>
-<li>Audit & Assurance (AA)</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Level 3: Strategic Professional</h2>
-<ul>
-<li><b>Essentials:</b> SBR, SBL</li>
-<li><b>Options:</b> AFM, AAA, ATX, APM</li>
-<li><i>AFM + AAA (Recommended)</i></li>
-</ul>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Academic Calendar Logic</h2>
-<div class="timeline">
-<ul>
-<li>2 papers per ACCA sitting</li>
-<li>12–14 weeks teaching + 2 weeks revision</li>
-<li>Weekday classes + weekend practice</li>
-<li>Total: 7 exam cycles</li>
-</ul>
-</div>
-</div>
-
-<div class="section">
-<h2>Month-wise Plan</h2>
-<div class="timeline">
-
-<h3>Phase 1 (Months 1–3)</h3>
-<p>BT + MA</p>
-<ul>
-<li>Month 1: Business structure, costing basics</li>
-<li>Month 2: HR, budgeting</li>
-<li>Month 3: Revision + September Exam</li>
-</ul>
-
-<h3>Phase 2 (Months 4–6)</h3>
-<ul>
-<li>Financial Accounting</li>
-<li>December Exam</li>
-</ul>
-
-<h3>Phase 3 (Months 7–9)</h3>
-<ul>
-<li>PM + TX</li>
-<li>March Exam</li>
-</ul>
-
-<h3>Phase 4 (Months 10–12)</h3>
-<ul>
-<li>FR + AA</li>
-<li>June Exam</li>
-</ul>
-
-<h3>Phase 5 (Months 13–15)</h3>
-<ul>
-<li>FM + LW</li>
-<li>September Exam</li>
-</ul>
-
-<h3>Phase 6 (Months 16–18)</h3>
-<ul>
-<li>SBL + SBR</li>
-<li>December Exam</li>
-</ul>
-
-<h3>Phase 7 (Months 19–21)</h3>
-<ul>
-<li>AFM + AAA</li>
-<li>March Exam</li>
-</ul>
-
-</div>
-</div>
-
-<div class="section">
-<h2>Weekly Teaching Timetable</h2>
-<table class="table">
-<tr>
-<th>Day</th>
-<th>Hours</th>
-<th>Activity</th>
-</tr>
-<tr>
-<td>Mon–Fri</td>
-<td>3 hrs/day</td>
-<td>Theory + Problems</td>
-</tr>
-<tr>
-<td>Saturday</td>
-<td>4 hrs</td>
-<td>Case Studies + Past Papers</td>
-</tr>
-<tr>
-<td>Sunday</td>
-<td>-</td>
-<td>Self Study</td>
-</tr>
-</table>
-</div>
-
-<div class="section">
-<h2>Assessment Plan</h2>
-<div class="timeline">
-<ul>
-<li>Weekly: Quizzes</li>
-<li>Monthly: Section Tests</li>
-<li>Pre-Exam: 3–4 Mock Tests</li>
-</ul>
-</div>
-</div>
-
-<div class="footer">
-<p>© GJIMT | ACCA Training Program</p>
-</div>
-
+<div class="detail" id="detailPage">
+  <h2 id="detailTitle"></h2>
+  <p id="detailContent"></p>
+  <button class="back-btn" onclick="goBack()">Back</button>
 </div>
 
 <script>
-const cards = document.querySelectorAll(".card");
+function goHome(){
+  window.location.href = "https://gjimtmicrosite.github.io/Integrated/";
+}
 
-cards.forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+function openDetail(type){
+  document.getElementById('mainPage').style.display='none';
+  document.getElementById('detailPage').style.display='block';
 
-    const rotateX = -(y / rect.height - 0.5) * 20;
-    const rotateY = (x / rect.width - 0.5) * 20;
+  let title = '';
+  let content = '';
 
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
+  if(type === 'bba-framework'){
+    title = 'BBA + ACCA Framework';
+    content = 'Detailed ACCA framework for BBA students including Applied Knowledge, Skills, and Professional levels.';
+  }
 
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "rotateX(0) rotateY(0)";
-  });
-});
+  if(type === 'bba-modules'){
+    title = 'BBA + ACCA Modules';
+    content = 'Modules include Business Technology, Financial Accounting, Corporate Law, Performance Management, and more.';
+  }
+
+  if(type === 'bba-fees'){
+    title = 'BBA + ACCA Fee Structure';
+    content = 'Comprehensive fee details including tuition, exam fees, and registration charges.';
+  }
+
+  if(type === 'bcom-framework'){
+    title = 'B.Com + ACCA Framework';
+    content = 'Structured ACCA pathway integrated with commerce fundamentals.';
+  }
+
+  if(type === 'bcom-modules'){
+    title = 'B.Com + ACCA Modules';
+    content = 'Includes Financial Reporting, Taxation, Audit, and Strategic Business Leader.';
+  }
+
+  if(type === 'bcom-fees'){
+    title = 'B.Com + ACCA Fee Structure';
+    content = 'Detailed breakdown of fees for entire program duration.';
+  }
+
+  document.getElementById('detailTitle').innerText = title;
+  document.getElementById('detailContent').innerText = content;
+}
+
+function goBack(){
+  document.getElementById('mainPage').style.display='block';
+  document.getElementById('detailPage').style.display='none';
+}
 </script>
 
 </body>
