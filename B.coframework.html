@@ -13,6 +13,28 @@ body {
     color: white;
 }
 
+/* BACK BUTTON */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Heading */
 h1 {
     text-align: center;
     padding: 20px;
@@ -107,6 +129,9 @@ h1 {
 
 <body>
 
+<!-- BACK BUTTON -->
+<button class="back-btn" onclick="goBack()">← Back</button>
+
 <h1>ACCA Syllabus & Structure</h1>
 
 <div class="info">
@@ -173,6 +198,11 @@ h1 {
 </div>
 
 <script>
+// BACK BUTTON FUNCTION
+function goBack(){
+    window.location.href = "https://gjimtmicrosite.github.io/ACCA/ACCA_plus2.html";
+}
+
 // Scroll Animation
 const fadeEls = document.querySelectorAll('.fade');
 
