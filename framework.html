@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA Syllabus - Premium UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0f2027;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* 3D Animated Background */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  top:-50%;
+  left:-50%;
+  background:radial-gradient(circle at 20% 20%, #ff512f33, transparent 40%),
+             radial-gradient(circle at 80% 30%, #00c6ff33, transparent 40%),
+             radial-gradient(circle at 50% 80%, #1d976c33, transparent 40%);
+  animation:animateBg 12s linear infinite;
+  z-index:-1;
+}
+
+@keyframes animateBg{
+  0%{transform:rotate(0deg) scale(1);} 
+  50%{transform:rotate(180deg) scale(1.3);} 
+  100%{transform:rotate(360deg) scale(1);} 
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:34px;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  position:absolute;
+  top:20px;
+  left:20px;
+  padding:10px 20px;
+  background:linear-gradient(135deg,#ff512f,#dd2476);
+  border:none;
+  border-radius:25px;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.05);
+}
+
+.top-info{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.info-box{
+  flex:1;
+  min-width:250px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  border-radius:12px;
+}
+
+.main-row{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.level{
+  flex:1;
+  min-width:300px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.level h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:20px;
+  border-bottom:2px solid rgba(255,255,255,0.2);
+  padding-bottom:10px;
+}
+
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.card{
+  padding:20px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  background:rgba(255,255,255,0.12);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#00c6ff;
+}
+
+.card ul{
+  padding-left:20px;
+}
+
+.card li{
+  margin-bottom:6px;
+}
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  opacity:0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<div class="container">
+
+<h1>ACCA Syllabus & Structure</h1>
+
+<div class="top-info">
+  <div class="info-box">
+    <p><b>Total Papers:</b> 14</p>
+    <p><b>Knowledge:</b> 3</p>
+    <p><b>Skills:</b> 6</p>
+    <p><b>Essentials:</b> 3</p>
+    <p><b>Options:</b> 2 of 4</p>
+  </div>
+  <div class="info-box">
+    <p><b>Passing Score:</b> 50%</p>
+    <p><b>Exam:</b> June & December</p>
+    <p><b>Max Papers:</b> 4 per attempt</p>
+  </div>
+</div>
+
+<div class="main-row">
+
+  <div class="level">
+    <h2>Fundamental Level (9 Papers)</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>Knowledge</h3>
+        <ul>
+          <li>F1 Business & Technology</li>
+          <li>F2 Management Accounting</li>
+          <li>F3 Financial Accounting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Skills</h3>
+        <ul>
+          <li>F4 Corporate & Business Law</li>
+          <li>F5 Performance Management</li>
+          <li>F6 Taxation</li>
+          <li>F7 Financial Reporting</li>
+          <li>F8 Audit & Assurance</li>
+          <li>F9 Financial Management</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="level">
+    <h2>Professional Level (5 Papers)</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>Essentials</h3>
+        <ul>
+          <li>P1 Governance, Risk & Ethics</li>
+          <li>P2 Corporate Reporting</li>
+          <li>P3 Business Analysis</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Options (Choose 2)</h3>
+        <ul>
+          <li>P4 Advanced Financial Management</li>
+          <li>P5 Advanced Performance Management</li>
+          <li>P6 Advanced Taxation</li>
+          <li>P7 Advanced Audit & Assurance</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">✨ Interactive ACCA Experience ✨</div>
+
+</div>
+
+<script>
+function goBack(){
+  window.location.href = "https://gjimtmicrosite.github.io/ACCA/ACCA_plus2.html";
+}
+</script>
+
+</body>
+</html>
