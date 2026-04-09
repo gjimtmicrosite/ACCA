@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCA Syllabus Structure</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5rem;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Layout */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Card */
+.card {
+    width: 260px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: 0.4s;
+    transform-style: preserve-3d;
+}
+
+/* 3D Hover */
+.card:hover {
+    transform: rotateY(12deg) rotateX(8deg) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+
+/* Headings */
+.card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* List */
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Colors */
+.knowledge { background: linear-gradient(135deg,#ff512f,#dd2476); }
+.skills { background: linear-gradient(135deg,#11998e,#38ef7d); }
+.essentials { background: linear-gradient(135deg,#396afc,#2948ff); }
+.options { background: linear-gradient(135deg,#56ccf2,#2f80ed); }
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 40px 0 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Animation */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info {
+    text-align: center;
+    margin: 10px;
+    font-size: 1.1rem;
+}
+</style>
+</head>
+
+<body>
+
+<h1>ACCA Syllabus & Structure</h1>
+
+<div class="info">
+    📌 Total Papers: 13 | Passing Marks: 50% <br>
+    📅 Exams: March, June, September, December
+</div>
+
+<!-- FUNDAMENTAL -->
+<div class="section-title">FUNDAMENTAL LEVEL (9 Papers)</div>
+
+<div class="wrapper">
+
+    <div class="card knowledge fade">
+        <h2>Knowledge</h2>
+        <ul>
+            <li>F1 Accountant in Business</li>
+            <li>F2 Management Accounting</li>
+            <li>F3 Financial Accounting</li>
+        </ul>
+    </div>
+
+    <div class="card skills fade">
+        <h2>Skills</h2>
+        <ul>
+            <li>F4 Corporate & Business Law</li>
+            <li>F5 Performance Management</li>
+            <li>F6 Taxation</li>
+            <li>F7 Financial Reporting</li>
+            <li>F8 Audit & Assurance</li>
+            <li>F9 Financial Management</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- PROFESSIONAL -->
+<div class="section-title">PROFESSIONAL LEVEL (4 Papers)</div>
+
+<div class="wrapper">
+
+    <div class="card essentials fade">
+        <h2>Essentials</h2>
+        <ul>
+            <li>P1 Governance, Risk & Ethics</li>
+            <li>P2 Corporate Reporting</li>
+            <li>P3 Business Analysis</li>
+        </ul>
+        <p style="font-size: 0.9rem; margin-top:10px;">
+            P1 + P3 = Strategic Business Leader<br>
+            P2 = Strategic Business Reporting
+        </p>
+    </div>
+
+    <div class="card options fade">
+        <h2>Options (Choose Any 2)</h2>
+        <ul>
+            <li>P4 Advanced Financial Management</li>
+            <li>P5 Advanced Performance Management</li>
+            <li>P6 Advanced Taxation</li>
+            <li>P7 Advanced Audit & Assurance</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+// Scroll Animation
+const fadeEls = document.querySelectorAll('.fade');
+
+function showElements() {
+    fadeEls.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showElements);
+window.addEventListener('load', showElements);
+
+// 3D Mouse Tilt
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = -(y - rect.height/2) / 12;
+        const rotateY = (x - rect.width/2) / 12;
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = "rotateX(0) rotateY(0)";
+    });
+});
+</script>
+
+</body>
+</html>
