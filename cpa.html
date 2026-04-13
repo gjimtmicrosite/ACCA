@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPA Program | GJIMT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background:linear-gradient(135deg,#dfe9f3,#eef2f7);
+  padding:20px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+h1{color:#333;}
+
+.home-btn{
+  padding:10px 24px;
+  background:linear-gradient(45deg,#007bff,#00c6ff);
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+  margin-bottom:30px;
+}
+
+.hero h2{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  opacity:.9;
+}
+
+/* TAB SLIDER */
+.tab-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.arrow{
+  background:#007bff;
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  cursor:pointer;
+}
+
+.tabs{
+  display:flex;
+  gap:12px;
+  overflow:hidden;
+  flex:1;
+}
+
+.tab{
+  flex:0 0 auto;
+  padding:10px 18px;
+  border-radius:30px;
+  background:#fff;
+  cursor:pointer;
+  border:1px solid #ddd;
+  white-space:nowrap;
+  transition:.3s;
+}
+
+.tab.active{
+  background:linear-gradient(45deg,#007bff,#00c6ff);
+  color:#fff;
+}
+
+/* CONTENT */
+.content{
+  display:none;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.content.active{display:block;}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#333;
+  color:#fff;
+  padding:10px;
+}
+
+td{
+  padding:10px;
+  border:1px solid #333;
+  color:#000;
+}
+
+/* CARDS */
+.card{
+  padding:20px;
+  border-radius:15px;
+  background:#ffffff;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+ul{padding-left:20px;}
+li{margin-bottom:6px;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>CPA Program Structure</h1>
+  <a href="https://gjimtmicrosite.github.io/ACCA/" class="home-btn">🏠 Home</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>Certified Public Accountant (CPA)</h2>
+  <p>4 Exams | 12–18 Months | Global Accounting Certification</p>
+</div>
+
+<!-- TABS -->
+<div class="tab-container">
+  <button class="arrow" onclick="moveTabs(-1)">❮</button>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" onclick="openTab(0)">Overview</div>
+    <div class="tab" onclick="openTab(1)">Paper 1: Financial Accounting & Reporting 
+</div>
+    <div class="tab" onclick="openTab(2)">Paper 2: Auditing & Attestation 
+</div>
+    <div class="tab" onclick="openTab(3)">Paper 3: Regulation 
+</div>
+    <div class="tab" onclick="openTab(4)">Paper 4: Business Environment & Concepts 
+</div>
+    <div class="tab" onclick="openTab(5)">Fees</div>
+  </div>
+
+  <button class="arrow" onclick="moveTabs(1)">❯</button>
+</div>
+
+<!-- CONTENTS -->
+
+<!-- OVERVIEW -->
+<div class="content active">
+  <div class="card">
+    <h3>CPA Overview</h3>
+    <ul>
+      <li>CPA is a 4-hour exam divided into four sections.</li>
+      <li>Complete all sections within 18 months.</li>
+      <li>Sections can be taken in any order.</li>
+      <li>Exam windows: Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAPER 1 -->
+<div class="content">
+  <div class="card">
+    <h3>Paper 1: Financial Accounting & Reporting</h3>
+    <ul>
+      <li>Conceptual Framework, Standard Setting and Financial Reporting
+</li>
+      
+      <li>Select Financial Statement Accounts
+</li>
+      <li>Select Transactions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAPER 2 -->
+<div class="content">
+  <div class="card">
+    <h3>Paper 2: Auditing & Attestation</h3>
+    <ul>
+      <li>Ethics, Professional Responsibilities & General Principles</li>
+      <li>Assessing Risk and Developing a Planned Response
+</li>
+      <li>Performing Further Procedures & Obtaining Evidence
+</li>
+      <li>Forming Conclusions & Reporting
+</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAPER 3 -->
+<div class="content">
+  <div class="card">
+    <h3>Paper 3: Regulation</h3>
+    <ul>
+      <li>Ethics, Professional Responsibilities & Federal Tax Procedures
+</li>
+      <li>Business LawFederal Taxation of Property Transactions
+</li>
+      <li>Federal Taxation of Individuals
+</li>
+      <li>Federal Taxation of Entities
+</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAPER 4 -->
+<div class="content">
+  <div class="card">
+    <h3>Paper 4: Business Environment & Concepts</h3>
+    <ul>
+      <li>Corporate Governance</li>
+      <li>Economic Analysis</li>
+      <li>Financial Management</li>
+      <li>IT & Operations</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FEES -->
+<div class="content">
+  <div class="card">
+    <h3>CPA Fees</h3>
+    <table>
+      <tr><th>S.No</th><th>Details</th></tr>
+      <tr><td>1</td><td>Evaluation Fee: $225 (Rs. 18,758.34)
+</td></tr>
+      <tr><td>2</td><td>Registration Fee: $170 (Rs. 14,172.97)
+</td></tr>
+      <tr><td>3</td><td>Exam Fee (For all 4 papers): $952 (Rs. 79,368.62)
+</td></tr>
+      <tr><td>4</td><td>Application Fee: $100 (Rs. 8,337.04)
+</td></tr>
+      <tr><td>5</td><td>International Testing Fee: $1560 (Rs. 1,30,057.82)
+</td></tr>
+      <tr><td colspan="2"><b>GRAND TOTAL: Rs. 2,50,695
+</b></td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+let currentIndex = 0;
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".content");
+const tabsContainer = document.getElementById("tabs");
+
+function openTab(index){
+  tabs.forEach(t => t.classList.remove("active"));
+  contents.forEach(c => c.classList.remove("active"));
+
+  tabs[index].classList.add("active");
+  contents[index].classList.add("active");
+
+  currentIndex = index;
+}
+
+/* Slider buttons */
+function moveTabs(direction){
+  tabsContainer.scrollBy({
+    left: direction * 200,
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
