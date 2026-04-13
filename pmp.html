@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Certification</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') no-repeat center/cover;
+    color: #fff;
+}
+
+/* OVERLAY */
+.overlay {
+    background: rgba(0,0,0,0.75);
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* HOME BUTTON */
+.home-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #ff9800;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: scale(1.1);
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #5a0f3c;
+    color: white;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.tab-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #ff9800;
+}
+
+.active {
+    background: #ff9800;
+}
+
+/* CONTENT */
+.content {
+    display: none;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.show {
+    display: block;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.02) rotateX(2deg);
+}
+
+/* INFO BOX */
+.info-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.small-box {
+    background: linear-gradient(135deg,#ff9800,#ffc107);
+    padding: 20px;
+    border-radius: 12px;
+    color: black;
+    font-weight: bold;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ff9800;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: rgba(255,152,0,0.3);
+}
+
+/* ANIMATION */
+.fade {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- HEADER -->
+<div class="header">
+    <div class="title">Project Management Professional (PMP)</div>
+    <button class="home-btn" onclick="goHome()">🏠 Home</button>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event,'overview')">Overview</button>
+    <button class="tab-btn" onclick="openTab(event,'people')">People</button>
+    <button class="tab-btn" onclick="openTab(event,'process')">Process</button>
+    <button class="tab-btn" onclick="openTab(event,'business')">Business</button>
+    <button class="tab-btn" onclick="openTab(event,'fees')">Fees</button>
+    <button class="tab-btn" onclick="openTab(event,'eligibility')">Eligibility</button>
+    <button class="tab-btn" onclick="openTab(event,'registration')">Registration</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="content show fade">
+    <div class="card">
+        <div class="info-box">
+            <div class="small-box">💰 Avg Salary<br>Rs. 16.2 Lakhs</div>
+            <div class="small-box">🌍 Global Recognition</div>
+        </div>
+
+        <p>✔ 230 minutes exam with 180 questions</p>
+        <p>✔ Available at Pearson Vue Center or Online</p>
+        <p>✔ Available in 15+ languages</p>
+    </div>
+</div>
+
+<!-- PEOPLE -->
+<div id="people" class="content fade">
+    <div class="card">
+        <table>
+            <tr><th>People</th><th>%</th></tr>
+            <tr><td>Leadership, Conflict Mgmt, Team Building, Emotional Intelligence</td><td>42%</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- PROCESS -->
+<div id="process" class="content fade">
+    <div class="card">
+        <table>
+            <tr><th>Process</th><th>%</th></tr>
+            <tr><td>Planning, Budgeting, Risk, Governance, Scheduling</td><td>50%</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- BUSINESS -->
+<div id="business" class="content fade">
+    <div class="card">
+        <table>
+            <tr><th>Business Environment</th><th>%</th></tr>
+            <tr><td>Compliance, Benefits, Organizational Change</td><td>8%</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- FEES -->
+<div id="fees" class="content fade">
+    <div class="card">
+        <h2>💸 Fees</h2>
+        <p>Rs. 23,288 – PMI Members</p>
+        <p>Rs. 47,150 – Non Members</p>
+        <p>* Membership Fee: Rs. 9,840</p>
+    </div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div id="eligibility" class="content fade">
+    <div class="card">
+        <h2>🎓 Eligibility</h2>
+        <p>✔ 4-year degree + 36 months experience + CAPM</p>
+        <p>✔ OR Secondary diploma + 60 months experience + CAPM</p>
+    </div>
+</div>
+
+<!-- REGISTRATION -->
+<div id="registration" class="content fade">
+    <div class="card">
+        <h2>📝 Registration</h2>
+        <p>✔ 1 year eligibility period</p>
+        <p>✔ Max 3 attempts</p>
+        <p>✔ After 3 attempts → wait 1 year</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+function openTab(evt, tabId) {
+    let contents = document.querySelectorAll('.content');
+    let buttons = document.querySelectorAll('.tab-btn');
+
+    contents.forEach(c => c.classList.remove('show'));
+    buttons.forEach(b => b.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('show');
+    evt.currentTarget.classList.add('active');
+}
+
+function goHome() {
+    window.location.href = "https://gjimtmicrosite.github.io/ACCA/";
+}
+</script>
+
+</body>
+</html>
+</html>
