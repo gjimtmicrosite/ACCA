@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA Structure | GJIMT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background:linear-gradient(135deg,#dfe9f3,#eef2f7);
+  padding:20px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+h1{color:#333;}
+
+/* HOME BUTTON */
+.home-btn{
+  padding:10px 24px;
+  background:linear-gradient(45deg,#ff7a18,#ffb347);
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* INFO BOX */
+.info-box{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,.15);
+  margin-bottom:30px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.info-box h2{
+  color:#2c3e50;
+  margin-bottom:10px;
+}
+
+.info-box p{
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* LEVELS */
+.levels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+
+.level{
+  padding:20px;
+  border-radius:18px;
+  color:#fff;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.foundation{background:linear-gradient(135deg,#ff416c,#ff4b2b);}
+.intermediate{background:linear-gradient(135deg,#11998e,#38ef7d);}
+.final{background:linear-gradient(135deg,#7f00ff,#e100ff);}
+
+/* TAB SLIDER */
+.tab-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.arrow{
+  background:#ff7a18;
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.tabs{
+  display:flex;
+  gap:12px;
+  overflow:hidden;
+  flex:1;
+}
+.table-container table,
+.table-container td,
+.table-container th {
+  color:#000 !important;
+}
+.tab{
+  flex:0 0 auto;
+  padding:10px 18px;
+  border-radius:30px;
+  background:#fff;
+  cursor:pointer;
+  border:1px solid #ddd;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.tab.active{
+  background:linear-gradient(45deg,#ff7a18,#ffb347);
+  color:#fff;
+  font-weight:600;
+}
+
+/* CONTENT */
+.content{
+  display:none;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.content.active{display:block;}
+
+.card{
+  padding:20px;
+  border-radius:15px;
+  color:#fff;
+}
+
+.training{background:#34495e;}
+.finaltab{background:#8e44ad;}
+.intertab{background:#27ae60;}
+.table-container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+/* HEADER */
+th{
+  background:linear-gradient(180deg,#f39c12,#d97706);
+  color:#000;
+  padding:14px;
+  font-size:18px;
+  border:1px solid #333;
+}
+
+/* CELLS */
+td{
+  padding:12px;
+  text-align:center;
+  border:1px solid #333;
+  font-size:15px;
+}
+
+/* SEM COLORS */
+.sem1{background:#8fa8d6;}
+.sem2{background:#76c7a3;}
+.sem3{background:#ff4d4d; color:#fff;}
+.sem4{background:#555; color:#fff;}
+
+/* BACKGROUND TEXTURE */
+.data{
+  background:#f7ecd4;
+}
+
+/* FOOT ROW */
+.fee{
+  background:#f3e1b0;
+  font-weight:600;
+}
+
+/* NOTE */
+.note{
+  text-align:center;
+  margin-top:20px;
+  font-size:16px;
+  font-weight:500;
+}
+
+.note span{
+  color:red;
+  font-weight:bold;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+/* HEADER */
+th{
+  background:linear-gradient(180deg,#f39c12,#d97706);
+  color:#000;
+  padding:14px;
+  font-size:17px;
+  border:1px solid #333;
+}
+
+/* CELLS */
+td{
+  padding:12px;
+  text-align:center;
+  border:1px solid #333;
+  font-size:15px;
+  color:#000;
+}
+
+/* SEM COLORS */
+.sem1{background:#8fa8d6;}
+.sem4{background:#666; color:#fff;}
+.sem5{background:#f1f500; font-weight:600;}
+
+/* DATA BG */
+.data{
+  background:#f7ecd4;
+}
+
+/* TAX COLUMN CENTER */
+.center{
+  vertical-align:middle;
+}
+
+/* FEE ROW */
+.fee{
+  background:#f3e1b0;
+  font-weight:600;
+}
+
+/* NOTE */
+.note{
+  text-align:center;
+  margin-top:20px;
+  font-size:16px;
+  font-weight:500;
+}
+
+.note span{
+  color:red;
+  font-weight:bold;
+}
+
+/* HOVER EFFECT */
+tr:hover td{
+  background:#fff3cd;
+  transition:0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>CA Syllabus & Structure</h1>
+  <a href="https://gjimtmicrosite.github.io/ACCA/" class="home-btn">🏠 Home</a>
+</div>
+
+<!-- FULL INFO -->
+<div class="info-box">
+
+  <div class="info-grid">
+    <div>
+      <h2>CA Syllabus & Structure</h2>
+      <p>
+        The CA syllabus consists of <b>16 papers</b> divided into 3 levels:<br>
+        CA Foundation Level - 4 Papers<br>
+        CA Intermediate Level - 6 Papers<br>
+        CA Final Level - 6 Papers
+      </p>
+    </div>
+
+    <div>
+      <h2>Passing Score</h2>
+      <p>
+        Minimum 40% in each subject and 50% aggregate required to pass.
+      </p>
+
+      <h2 style="margin-top:10px;">Exam Schedule</h2>
+      <p>
+        Foundation & Final: June & December<br>
+        Intermediate: May & November
+      </p>
+    </div>
+  </div>
+
+  <div class="levels">
+
+    <div class="level foundation">
+      <h3>CA Foundation Level</h3>
+      <ul>
+        <li>Accounting</li>
+        <li>Business Laws</li>
+        <li>Quantitative Aptitude</li>
+        <li>Business Economics</li>
+      </ul>
+    </div>
+
+    <div class="level intermediate">
+      <h3>CA Intermediate Level</h3>
+      <ul>
+        <li>Advanced Accounting</li>
+        <li>Corporate Laws</li>
+        <li>Taxation</li>
+        <li>Cost & Management Accounting</li>
+        <li>Auditing & Ethics</li>
+        <li>Financial Management + Strategic Management</li>
+      </ul>
+    </div>
+
+    <div class="level final">
+      <h3>CA Final Level</h3>
+      <ul>
+        <li>Financial Reporting</li>
+        <li>Advanced Financial Management</li>
+        <li>Advanced Auditing,Assurance & Professional Ethics</li>
+        <li>Direct Tax Laws & International Taxation</li>
+        <li>Indirect Tax Laws</li>
+        <li>Integrated Business Solutions</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- TAB SLIDER -->
+<div class="tab-container">
+  <button class="arrow" onclick="moveTabs(-1)">❮</button>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" onclick="openTab(0)">CA Foundation Level</div>
+    <div class="tab" onclick="openTab(1)">CA Intermediate Level (Group 1)</div>
+    <div class="tab" onclick="openTab(2)">CA Intermediate Level (Group 2)</div>
+    <div class="tab" onclick="openTab(3)">Articleship Under CA 1.5 yrs</div>
+    <div class="tab" onclick="openTab(4)">Industrial Training 1.5 Yrs</div>
+    <div class="tab" onclick="openTab(5)">* CA Final Level (Group 1) After 2.5 Yrs</div>
+    <div class="tab" onclick="openTab(6)">CA Final Level (Group 2)</div>
+  </div>
+
+  <button class="arrow" onclick="moveTabs(1)">❯</button>
+</div>
+
+<!-- FULL CONTENT (UNCHANGED) -->
+<div class="content active">
+  <div class="card intertab">
+    <h3>CA Foundation Level</h3>
+   <div class="table-container">
+
+<table>
+  <tr>
+    <th>Semester</th>
+    <th>B.Com (Hons)</th>
+    <th>CA Foundation Level</th>
+  </tr>
+
+  <tr>
+    <td class="sem1">Semester 1</td>
+    <td class="data">Financial Accounting</td>
+    <td class="data">Accounting</td>
+  </tr>
+
+  <tr>
+    <td class="sem1">Semester 1</td>
+    <td class="data">Managerial Economics</td>
+    <td class="data">Business Economics</td>
+  </tr>
+
+  <tr>
+    <td class="sem2">Semester 2</td>
+    <td class="data">Business Statistics</td>
+    <td class="data">Quantitative Aptitude</td>
+  </tr>
+
+  <tr>
+    <td class="sem3">* Semester 3</td>
+    <td class="data">Mercantile Law</td>
+    <td class="data" rowspan="2" style="vertical-align:middle;">
+      <span style="color:red">*</span> Business Law
+    </td>
+  </tr>
+
+  <tr>
+    <td class="sem4">* Semester 4</td>
+    <td class="data">Company Law</td>
+  </tr>
+
+  <tr>
+    <td colspan="3" class="fee">Fee: Rs. 9,000</td>
+  </tr>
+
+</table>
+
+</div>
+
+<div class="note">
+  <span>*</span> Extra coaching can be given in Semester 2
+</div>
+
+  </div>
+</div>
+
+<div class="content">
+  <div class="card intertab">
+    <h3>Intermediate Group 1</h3>
+   <div class="container">
+ <table>
+
+<tr>
+  <th>Semester</th>
+  <th>B.Com (Hons)</th>
+  <th>CA Intermediate Level (Group 1)</th>
+</tr>
+
+<tr>
+  <td class="sem1">Semester 1</td>
+  <td class="data">Financial Accounting</td>
+  <td class="data">Advanced Accounting</td>
+</tr>
+
+<tr>
+  <td class="sem4">Semester 4</td>
+  <td class="data">Company Law</td>
+  <td class="data center" rowspan="2">
+    Corporate and other Laws
+  </td>
+</tr>
+
+<tr>
+  <td class="sem4">Semester 4</td>
+  <td class="data">Corporate Accounting</td>
+</tr>
+
+<tr>
+  <td class="sem4">Semester 4</td>
+  <td class="data">Income Tax Law & Practice</td>
+ <td class="data center" rowspan="2" ><span style="color:red">*</span> Taxation
+  </td>
+</tr>
+
+<tr>
+  <td class="sem5">* Semester 5</td>
+  <td class="data">Goods & Services Tax</td>
+
+</tr>
+
+<tr>
+  <td colspan="3" class="fee">Fee: Rs. 13,000</td>
+</tr>
+
+</table>
+</div>
+
+<div class="note">
+  <span>*</span> Extra coaching can be given in Semester 4
+</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="card intertab">
+    <h3>Intermediate Group 2</h3>
+   <table>
+
+<tr>
+  <th>Semester</th>
+  <th>B.Com (Hons)</th>
+  <th>CA Intermediate Level (Group 2)</th>
+</tr>
+
+<tr>
+  <td class="sem2">Semester 2</td>
+  <td class="data">Cost Accounting</td>
+  <td class="data center" rowspan="2">
+    Cost & Management Accounting
+  </td>
+</tr>
+
+<tr>
+  <td class="sem3">Semester 3</td>
+  <td class="data">Management Accounting</td>
+</tr>
+
+<tr>
+  <td class="sem5">Semester 5</td>
+  <td class="data">Financial Management</td>
+  <td class="data">Financial Management</td>
+</tr>
+
+<tr>
+  <td class="data"></td>
+  <td class="data"></td>
+  <td class="data">
+    <span style="color:red">**</span> Strategic Management
+  </td>
+</tr>
+
+<tr>
+  <td class="data"></td>
+  <td class="data"></td>
+  <td class="data">
+    <span style="color:red">*</span> Auditing and Ethics
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" class="fee">Fee: Rs. 13,000</td>
+</tr>
+
+</table>
+</div>
+
+<div class="note">
+  <span>*</span> Extra coaching will be provided by <b>GJIMT</b>
+</div>
+
+<div class="note">
+  <span>**</span> Extra Classes to be taken with BBA.
+</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="card training">
+    <h3>Articleship (1.5 Years)</h3>
+    <ul>
+      <li>GJIMT will Organize Articleship in Tricity under established CA</li>
+      <li>Four ICAI Online modules to be cleared </li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="card training">
+    <h3>Industrial Training (1.5 Years)</h3>
+    <ul>
+      <li>GJIMT will Organize Industrial training in tricity after taking permission from CA from whom Articleship is being taken.</li>
+      <li>Four ICAI Online modules to be cleared </li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="card finaltab">
+    <h3>Final Group 1 (After 2.5 Years)</h3>
+   <table>
+
+<tr>
+  <th>Semester</th>
+  <th>B.Com (Hons.)</th>
+  <th>CA Final Level (Group 1)</th>
+</tr>
+
+<tr>
+  <td class="sem">Semester 5</td>
+  <td>Advanced Financial Management</td>
+  <td>
+    Advanced Financial Management<br>
+    <span style="color:red">*</span> Advanced Auditing, Assurance & Professional Ethics<br>
+    <span style="color:red">*</span> Financial Reporting
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" class="fee">Fee: Rs. 38,300</td>
+</tr>
+
+</table>
+</div>
+
+<div class="note">
+  <span>*</span> After Graduation GJIMT gives the option of Final Level Coaching
+</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="card finaltab">
+    <h3>Final Group 2</h3>
+   <table>
+
+<tr>
+  <th>Semester</th>
+  <th>B.Com (Hons.)</th>
+  <th>CA Final Level (Group 2)</th>
+</tr>
+
+<tr>
+  <td class="sem4">Semester 4</td>
+  <td>Income Tax Law & Practice</td>
+  <td>
+    Direct Tax Laws & International Taxation<br>
+    Indirect Tax Laws
+  </td>
+</tr>
+
+<tr>
+  <td class="sem5">Semester 5</td>
+  <td>Goods & Services Tax</td>
+  
+  <td>
+    <span style="color:red">*</span> Integrated Business Solutions
+ </td>
+</tr>
+
+<tr>
+  <td colspan="3" class="fee">Fee: Rs. 38,300</td>
+</tr>
+
+</table>
+</div>
+
+<div class="note">
+  <span>*</span> After Graduation GJIMT gives the option of Final Level Coaching
+</div>
+  </div>
+</div>
+
+<script>
+let currentIndex = 0;
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".content");
+const tabsContainer = document.getElementById("tabs");
+
+function openTab(index){
+  tabs.forEach(t=>t.classList.remove("active"));
+  contents.forEach(c=>c.classList.remove("active"));
+
+  tabs[index].classList.add("active");
+  contents[index].classList.add("active");
+
+  currentIndex = index;
+
+  // smooth center scroll when clicked
+  tabs[index].scrollIntoView({
+    behavior:"smooth",
+    inline:"center"
+  });
+}
+
+/* ONLY manual scroll buttons */
+function moveTabs(direction){
+  tabsContainer.scrollBy({
+    left: direction * 250,
+    behavior: "smooth"
+  });
+}
+</script>
+</body>
+</html>
