@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFA Program | GJIMT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#ece5d8,#dcd2c0);
+  padding:20px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.title{
+  background:#e6e6e6;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:600;
+}
+
+/* HOME BUTTON */
+.home-btn{
+  padding:10px 22px;
+  background:linear-gradient(45deg,#ff7a18,#ffb347);
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  transition:.3s;
+}
+
+.home-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 12px 25px rgba(0,0,0,.4);
+}
+
+/* MAIN INFO */
+.main-box{
+  background:#f5d98a;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.flex{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.box{
+  flex:1;
+  min-width:250px;
+  background:#d4a017;
+  padding:15px;
+  border-radius:10px;
+  color:#000;
+  font-weight:500;
+}
+
+/* LIST */
+.list{
+  margin-top:20px;
+  background:#ffe8a3;
+  padding:15px;
+  border-radius:10px;
+}
+
+.list div{
+  padding:6px;
+  border-bottom:1px solid #d6b45d;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:25px 0;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:12px 18px;
+  background:#c97a20;
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.tab:hover{
+  transform:scale(1.05);
+}
+
+.tab.active{
+  background:#fff;
+  color:#000;
+  border:2px solid #c97a20;
+}
+
+/* CONTENT */
+.content{
+  display:none;
+  background:#ffe8a3;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.content.active{
+  display:block;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+td{
+  border:1px solid #c9a94c;
+  padding:10px;
+  background:#fff3c4;
+}
+
+/* ARROW */
+.arrow{
+  text-align:center;
+  font-size:30px;
+  margin:10px 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .tabs{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="title">Chartered Financial Analyst (CFA)</div>
+  <a href="https://gjimtmicrosite.github.io/ACCA/" class="home-btn">🏠 Home</a>
+</div>
+
+<!-- MAIN INFO -->
+<div class="main-box">
+
+<div class="flex">
+  <div class="box">
+    <b>Average Salary</b><br><br>
+    4 LPA to 30 LPA
+  </div>
+
+  <div class="box">
+    <b>Role of CFAs</b><br><br>
+    Accountants & Auditors; Risk Analysts; Credit Analysts;<br>
+    Portfolio Managers; Investment Strategists; Chief Investment Officers.
+  </div>
+</div>
+
+<div class="list">
+  <div>1 Candidates must have received undergraduate degree before Level 2 exam date.</div>
+  <div>2 Candidates are permitted to take the exam twice per calendar year.</div>
+  <div>3 Candidates are allowed a maximum of 6 attempts per exam level.</div>
+  <div>4 Four exam cycles: February, May, August and November.</div>
+  <div>5 CFA is globally recognized in the investment management profession.</div>
+</div>
+
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="openTab(0)">Level 1: Investment Tools</div>
+  <div class="tab" onclick="openTab(1)">Level 2: Asset Classes</div>
+  <div class="tab" onclick="openTab(2)">Level 3: Portfolio Management & Wealth Planning</div>
+  <div class="tab" onclick="openTab(3)">Fee Structure</div>
+  <div class="tab" onclick="openTab(4)">Eligibility</div>
+</div>
+
+<!-- LEVEL 1 -->
+<div class="content active">
+  <table>
+    <tr><td>1</td><td>Ethics and Professional Standards</td></tr>
+    <tr><td>2</td><td>Quantitative Methods</td></tr>
+    <tr><td>3</td><td>Economics</td></tr>
+    <tr><td>4</td><td>Financial Reporting and Analysis</td></tr>
+    <tr><td>5</td><td>Corporate Finance</td></tr>
+  </table>
+</div>
+
+<!-- LEVEL 2 -->
+<div class="content">
+  <div class="arrow">⬇</div>
+  <table>
+    <tr><td>1</td><td>Ethics and Professional Standards</td></tr>
+    <tr><td>2</td><td>Equity Investments</td></tr>
+    <tr><td>3</td><td>Fixed Income</td></tr>
+    <tr><td>4</td><td>Derivatives</td></tr>
+    <tr><td>5</td><td>Alternative Investments</td></tr>
+  </table>
+</div>
+
+<!-- LEVEL 3 -->
+<div class="content">
+  <div class="arrow">⬇</div>
+  <table>
+    <tr><td>1</td><td>Ethics and Professional Standards</td></tr>
+    <tr><td>2</td><td>Portfolio Management</td></tr>
+    <tr><td>3</td><td>Wealth Planning</td></tr>
+  </table>
+</div>
+
+<!-- FEE -->
+<div class="content">
+  <table>
+    <tr><td>One-time Enrollment Fee</td><td>USD 350 (Rs. 29,238)</td></tr>
+    <tr><td>Registration Fee</td><td>USD 1,250 (Rs. 1,04,425)</td></tr>
+  </table>
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="content">
+  <div style="background:#fff3c4;padding:15px;border-radius:10px;text-align:center;">
+    Undergraduate students are eligible to register as long as they are within 
+    <b>23 months of graduation</b>.
+  </div>
+</div>
+
+<script>
+function openTab(index){
+  let tabs=document.querySelectorAll(".tab");
+  let contents=document.querySelectorAll(".content");
+
+  tabs.forEach(t=>t.classList.remove("active"));
+  contents.forEach(c=>c.classList.remove("active"));
+
+  tabs[index].classList.add("active");
+  contents[index].classList.add("active");
+}
+</script>
+
+</body>
+</html>
