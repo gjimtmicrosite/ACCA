@@ -16,7 +16,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 3D ANIMATED BACKGROUND */
+/* ANIMATED BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -53,74 +53,67 @@ body::before{
   color:#fff;
   font-weight:600;
   cursor:pointer;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  transition:0.3s;
-}
-
-.home-btn:hover{
-  transform:scale(1.05);
 }
 
 h1{
-  margin-bottom:60px;
+  margin-bottom:50px;
 }
 
+/* NEW CARD DESIGN */
 .cards{
   display:flex;
   justify-content:center;
-  gap:80px;
+  gap:40px;
   flex-wrap:wrap;
 }
 
 .card{
-  width:300px;
-  height:380px;
-  perspective:1000px;
-}
-
-.card-inner{
-  position:relative;
-  width:100%;
-  height:100%;
-  transition:transform 0.8s;
-  transform-style:preserve-3d;
-}
-
-.card:hover .card-inner{
-  transform:rotateY(180deg);
-}
-
-.card-front, .card-back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  backface-visibility:hidden;
+  width:320px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
   border-radius:20px;
+  padding:25px;
   box-shadow:0 15px 35px rgba(0,0,0,0.4);
-  padding:20px;
+  transition:0.4s;
+  text-align:left;
 }
 
-.card-front{
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h2{
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:14px;
+  opacity:0.85;
+}
+
+.explore-btn{
+  margin-top:15px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
   background:linear-gradient(135deg,#ff512f,#dd2476);
-}
-
-.card-back{
-  background:linear-gradient(135deg,#1d976c,#93f9b9);
-  transform:rotateY(180deg);
+  color:white;
+  cursor:pointer;
+  font-weight:600;
 }
 
 .sub-links{
-  margin-top:20px;
-  display:flex;
+  margin-top:15px;
+  display:none;
   flex-direction:column;
-  gap:15px;
+  gap:10px;
 }
 
 .sub-links a{
   text-decoration:none;
   padding:10px;
   border-radius:10px;
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.15);
   color:#fff;
   transition:0.3s;
 }
@@ -130,76 +123,48 @@ h1{
   color:#000;
 }
 
-.detail{
-  display:none;
-  padding:40px;
-  text-align:center;
-}
-
-.back-btn{
-  margin-top:20px;
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  background:#ff512f;
-  color:#fff;
-  cursor:pointer;
-}
-
 </style>
 </head>
 
 <body>
 
-<button class="home-btn" onclick="goHome()">Home</button>
+<button class="home-btn" onclick="goHome()">🏠 Home</button>
 
-<div class="container" id="mainPage">
+<div class="container">
   <h1>ACCA Integrated Programs</h1>
 
   <div class="cards">
 
+    <!-- BBA -->
     <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <h2>BBA + ACCA</h2>
-          <p>Professional business degree with global accounting certification.</p>
-        </div>
-        <div class="card-back">
-          <h3>Explore</h3>
-          <div class="sub-links">
-            <a href="framework.html">ACCA Framework</a>
-            <a href="bbamodule.html">Modules</a>
-            <a href="fee.html" onclick="openDetail('bba-fees')">Fee Structure</a>
-          </div>
-        </div>
+      <h2>BBA + ACCA</h2>
+      <p>Professional business degree with global accounting certification.</p>
+
+      <button class="explore-btn" onclick="toggleLinks('bbaLinks')">Explore</button>
+
+      <div class="sub-links" id="bbaLinks">
+        <a href="framework.html">ACCA Framework</a>
+        <a href="bbamodule.html">Modules</a>
+        <a href="fee.html">Fee Structure</a>
       </div>
     </div>
 
+    <!-- BCOM -->
     <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <h2>B.Com + ACCA</h2>
-          <p>Commerce degree with international accounting excellence.</p>
-        </div>
-        <div class="card-back">
-          <h3>Explore</h3>
-          <div class="sub-links">
-            <a href="B.coframework.html" onclick="openDetail('bcom-framework')">ACCA Framework</a>
-            <a href="B.commodule.html" onclick="openDetail('bcom-modules')">Modules</a>
-            <a href="B.comfee.html" onclick="openDetail('bcom-fees')">Fee Structure</a>
-              <a href="gjimtacca.html" onclick="openDetail('bcom-fees')">GJIMT Fee Structure</a>
-          </div>
-        </div>
+      <h2>B.Com + ACCA</h2>
+      <p>Commerce degree with international accounting excellence.</p>
+
+      <button class="explore-btn" onclick="toggleLinks('bcomLinks')">Explore</button>
+
+      <div class="sub-links" id="bcomLinks">
+        <a href="B.coframework.html">ACCA Framework</a>
+        <a href="B.commodule.html">Modules</a>
+        <a href="B.comfee.html">Fee Structure</a>
+        <a href="gjimtacca.html">GJIMT Fee Structure</a>
       </div>
     </div>
 
   </div>
-</div>
-
-<div class="detail" id="detailPage">
-  <h2 id="detailTitle"></h2>
-  <p id="detailContent"></p>
-  <button class="back-btn" onclick="goBack()">Back</button>
 </div>
 
 <script>
@@ -207,50 +172,14 @@ function goHome(){
   window.location.href = "https://gjimtmicrosite.github.io/Integrated/";
 }
 
-function openDetail(type){
-  document.getElementById('mainPage').style.display='none';
-  document.getElementById('detailPage').style.display='block';
+function toggleLinks(id){
+  let section = document.getElementById(id);
 
-  let title = '';
-  let content = '';
-
-  if(type === 'bba-framework'){
-    title = 'BBA + ACCA Framework';
-    content = 'Detailed ACCA framework for BBA students including Applied Knowledge, Skills, and Professional levels.';
+  if(section.style.display === "flex"){
+    section.style.display = "none";
+  } else {
+    section.style.display = "flex";
   }
-
-  if(type === 'bba-modules'){
-    title = 'BBA + ACCA Modules';
-    content = 'Modules include Business Technology, Financial Accounting, Corporate Law, Performance Management, and more.';
-  }
-
-  if(type === 'bba-fees'){
-    title = 'BBA + ACCA Fee Structure';
-    content = 'Comprehensive fee details including tuition, exam fees, and registration charges.';
-  }
-
-  if(type === 'bcom-framework'){
-    title = 'B.Com + ACCA Framework';
-    content = 'Structured ACCA pathway integrated with commerce fundamentals.';
-  }
-
-  if(type === 'bcom-modules'){
-    title = 'B.Com + ACCA Modules';
-    content = 'Includes Financial Reporting, Taxation, Audit, and Strategic Business Leader.';
-  }
-
-  if(type === 'bcom-fees'){
-    title = 'B.Com + ACCA Fee Structure';
-    content = 'Detailed breakdown of fees for entire program duration.';
-  }
-
-  document.getElementById('detailTitle').innerText = title;
-  document.getElementById('detailContent').innerText = content;
-}
-
-function goBack(){
-  document.getElementById('mainPage').style.display='block';
-  document.getElementById('detailPage').style.display='none';
 }
 </script>
 
